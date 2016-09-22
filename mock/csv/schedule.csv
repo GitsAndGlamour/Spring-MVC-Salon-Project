@@ -1,0 +1,1 @@
+schedule_id,staff_id,resource_id,service_id,"monday_start","tuesday_start","wedday_start","thursday_start","friday_start","saturday_start","sunday_start","monday_end","tuesday_end","wedday_end","thursday_end","friday_end","saturday_end","sunday_end",create_admin,update_admin,"create_ts","update_ts",is_active

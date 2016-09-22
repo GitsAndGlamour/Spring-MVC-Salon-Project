@@ -1,0 +1,4 @@
+vendor_id,"name","details","notes",create_admin,update_admin,"create_ts","update_ts",is_active
+1000,"Premier Beauty Systems",NULL,NULL,0,NULL,"2016-09-18 20:15:23","2016-09-18 20:15:23",1
+2000,"Beauty Craft",NULL,NULL,0,NULL,"2016-09-18 20:15:23","2016-09-18 20:15:23",1
+3000,"National Salon Services",NULL,NULL,0,NULL,"2016-09-18 20:15:23","2016-09-18 20:15:23",1

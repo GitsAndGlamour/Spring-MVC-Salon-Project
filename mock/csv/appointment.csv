@@ -1,0 +1,1 @@
+appointment_id,service_id,customer_id,promotion_id,"notes",is_repeated,staff_id,"resources",status_code,"check_in","scheduled_at",create_admin,update_admin,"create_ts","update_ts",is_active
