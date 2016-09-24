@@ -3,19 +3,23 @@ var app = angular.module('app', ['ui.router', 'ngMaterial']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
+
+    // PATH TO TEMPLATES =======================================================
+    var $path = '../../templates/';
 
     $stateProvider
 
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: 'partial-home.html'
+            templateUrl: path+'home.html'
         })
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
-            // we'll get to this in a bit
+            url: '/about',
+            templateUrl: path+'about.html'
         });
 
 });
