@@ -1,0 +1,7 @@
+---
+applications:
+  - name: salon
+    buildpack: java_buildpack
+    path: target/ui-0.0.1-SNAPSHOT.jar
+    services:
+      - mysql
