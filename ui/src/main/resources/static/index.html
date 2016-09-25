@@ -33,31 +33,51 @@
         <md-toolbar>
        <div class="md-toolbar-tools">
          <md-button aria-label="logo">
-           <md-icon md-pixel-icon="img/icons/barber_pole_filled.png"></md-icon>
+           <md-icon md-svg-icon="img/icons/barbershop.svg"></md-icon>
          </md-button>
-         <h2>
-           <span>Imagine Salon</span>
-         </h2>
          <span flex></span>
+
+  <!-- Popular salon functions -->
+         <md-button aria-label="new promotion">
+           <md-icon md-svg-icon="img/icons/promotion.svg"></md-icon>
+         </md-button>
+         <md-button aria-label="new appointment">
+           <md-icon md-svg-icon="img/icons/calendar.svg"></md-icon>
+         </md-button>
+         <md-button aria-label="new customer">
+           <md-icon md-svg-icon="img/icons/team.svg"></md-icon>
+         </md-button>
+
+  <!-- User-oriented buttons -->
+         <md-button class="md-raised md-accent" aria-label="Sign-in">
+           My Account
+         </md-button>
          <md-button class="md-raised" aria-label="Sign-in">
            Sign-in
          </md-button>
        </div>
-     </md-toolbar>
+       </md-toolbar>
+  <!-- Navigation sub-header -->
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+  <!-- Navigation tabs -->
         <md-nav-item md-nav-sref="home" name="home">Dashboard</md-nav-item>
         <md-nav-item md-nav-sref="calendar" name="calendar">Calendar</md-nav-item>
         <md-nav-item md-nav-sref="customers" name="customers">Customers</md-nav-item>
         <md-nav-item md-nav-sref="settings" name="settings">Settings</md-nav-item>
         <md-nav-item md-nav-sref="reports" name="reports">Reports</md-nav-item>
+        <span flex></span>
 
+  <!-- Personalized greeting message -->
+        <span>Welcome <b>User</b>!</span>
       </md-nav-bar>
+
+ <!-- Dynamic content example -->
       <div class="ext-content">
         External content for <b><span>{{currentNavItem}}</span></b>
       </div>
+
     </md-content>
   </div>
-
 
 
   <!-- Angular Dynamic templating -->

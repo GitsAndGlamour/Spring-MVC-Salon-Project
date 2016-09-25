@@ -27,10 +27,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 (function() {
   'use strict';
 
-  angular.module('app', ['ngMaterial'])
-      .controller('NavCtrl', NavCtrl);
+  app.controller('NavCtrl', NavCtrl);
 
   function NavCtrl($scope) {
     $scope.currentNavItem = 'home';
   }
+  app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('grey')
+    .accentPalette('light-blue');
+});
 })();
