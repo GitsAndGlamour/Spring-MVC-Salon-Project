@@ -1,0 +1,26 @@
+{
+  "name": "salon",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Salon interface using Spring Boot",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitsAndGlamour/Spring-MVC-Salon-Project.git"
+  },
+  "keywords": [
+    "salon",
+    "spring",
+    "boot",
+    "pivotal",
+    "cf"
+  ],
+  "author": "Omie Walls <omierwalls@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitsAndGlamour/Spring-MVC-Salon-Project/issues"
+  },
+  "homepage": "https://github.com/GitsAndGlamour/Spring-MVC-Salon-Project#readme"
+}
