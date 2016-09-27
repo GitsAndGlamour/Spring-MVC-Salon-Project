@@ -26,11 +26,11 @@
 DROP TABLE IF EXISTS `addon`;
 
 CREATE TABLE `addon` (
-  `addon_id` int(4) NOT NULL,
+  `addon_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `timeblock` int(3) NOT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`addon_id`)
@@ -56,18 +56,18 @@ DROP TABLE IF EXISTS `appointment`;
 
 CREATE TABLE `appointment` (
   `appointment_id` int(8) NOT NULL,
-  `service_id` int(4) DEFAULT NULL,
-  `customer_id` int(4) NOT NULL,
-  `promotion_id` int(4) DEFAULT NULL,
+  `service_id` varchar(255) DEFAULT NULL,
+  `customer_id` varchar(255) NOT NULL,
+  `promotion_id` varchar(255) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL,
   `is_repeated` tinyint(1) DEFAULT NULL,
-  `staff_id` int(4) DEFAULT NULL,
+  `staff_id` varchar(255) DEFAULT NULL,
   `resources` varchar(255) DEFAULT NULL,
-  `status_code` int(4) DEFAULT NULL,
+  `status_code` varchar(255) DEFAULT NULL,
   `check_in` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `scheduled_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -92,7 +92,7 @@ CREATE TABLE `appointment` (
 DROP TABLE IF EXISTS `change`;
 
 CREATE TABLE `change` (
-  `change_id` int(4) NOT NULL AUTO_INCREMENT,
+  `change_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `table_name` varchar(35) NOT NULL,
   `column_name` varchar(35) NOT NULL,
@@ -100,8 +100,8 @@ CREATE TABLE `change` (
   `current_value` varchar(255) NOT NULL,
   `change_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_undone` tinyint(1) DEFAULT '0',
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -121,8 +121,8 @@ CREATE TABLE `count` (
   `count_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data` mediumtext,
   `is_erroneous` tinyint(1) DEFAULT '0',
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -137,7 +137,7 @@ CREATE TABLE `count` (
 DROP TABLE IF EXISTS `customer`;
 
 CREATE TABLE `customer` (
-  `customer_id` int(4) NOT NULL AUTO_INCREMENT,
+  `customer_id` varchar(255) NOT NULL,
   `first` varchar(35) NOT NULL,
   `last` varchar(35) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -148,11 +148,11 @@ CREATE TABLE `customer` (
   `phone` varchar(12) DEFAULT NULL,
   `alt_phone` varchar(12) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL,
-  `preferred_staff` int(4) DEFAULT NULL,
-  `discount_type` int(4) DEFAULT NULL,
+  `preferred_staff` varchar(255) DEFAULT NULL,
+  `discount_type` varchar(255) DEFAULT NULL,
   `referral_source` varchar(50) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -669,12 +669,12 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `discount`;
 
 CREATE TABLE `discount` (
-  `discount_type` int(4) NOT NULL AUTO_INCREMENT,
+  `discount_type` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `percentage` decimal(5,2) DEFAULT NULL,
   `amount` decimal(5,2) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -736,20 +736,20 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `product`;
 
 CREATE TABLE `product` (
-  `product_id` int(4) NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(255) NOT NULL,
   `name` varchar(50) NOT NULL,
   `upc_code` bigint(12) NOT NULL,
   `category` varchar(35) DEFAULT NULL,
   `size` varchar(35) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL,
-  `vendor_id` int(4) NOT NULL,
+  `vendor_id` varchar(255) NOT NULL,
   `quantity` int(3) DEFAULT '0',
-  `status_code` int(4) DEFAULT '400',
+  `status_code` varchar(255) DEFAULT '400',
   `wholesale_cost` decimal(5,2) NOT NULL DEFAULT '0.00',
   `retail_price` decimal(5,2) NOT NULL DEFAULT '0.00',
   `brand` varchar(35) NOT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -881,19 +881,19 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `promotion`;
 
 CREATE TABLE `promotion` (
-  `promotion_id` int(4) NOT NULL AUTO_INCREMENT,
+  `promotion_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
-  `discount_type` int(4) DEFAULT NULL,
+  `discount_type` varchar(255) DEFAULT NULL,
   `is_available` tinyint(1) DEFAULT NULL,
-  `limit` int(4) DEFAULT NULL,
+  `limit` varchar(255) DEFAULT NULL,
   `requires_code` tinyint(1) DEFAULT NULL,
   `valid_codes` varchar(255) DEFAULT NULL,
   `valid_services` varchar(255) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -910,15 +910,15 @@ CREATE TABLE `promotion` (
 DROP TABLE IF EXISTS `resource`;
 
 CREATE TABLE `resource` (
-  `resource_id` int(4) NOT NULL,
+  `resource_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL,
   `type` varchar(35) NOT NULL,
-  `schedule_id` int(4) DEFAULT NULL,
-  `status_code` int(4) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `schedule_id` varchar(255) DEFAULT NULL,
+  `status_code` varchar(255) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -954,10 +954,10 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `role`;
 
 CREATE TABLE `role` (
-  `role_id` int(4) NOT NULL,
+  `role_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`role_id`)
@@ -983,10 +983,10 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `schedule`;
 
 CREATE TABLE `schedule` (
-  `schedule_id` int(4) NOT NULL AUTO_INCREMENT,
-  `staff_id` int(4) DEFAULT NULL,
-  `resource_id` int(4) DEFAULT NULL,
-  `service_id` int(4) DEFAULT NULL,
+  `schedule_id` varchar(255) NOT NULL,
+  `staff_id` varchar(255) DEFAULT NULL,
+  `resource_id` varchar(255) DEFAULT NULL,
+  `service_id` varchar(255) DEFAULT NULL,
   `monday_start` datetime NOT NULL,
   `tuesday_start` datetime NOT NULL,
   `wedday_start` datetime NOT NULL,
@@ -1001,8 +1001,8 @@ CREATE TABLE `schedule` (
   `friday_end` datetime NOT NULL,
   `saturday_end` datetime NOT NULL,
   `sunday_end` datetime NOT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -1023,18 +1023,18 @@ CREATE TABLE `schedule` (
 DROP TABLE IF EXISTS `service`;
 
 CREATE TABLE `service` (
-  `service_id` int(4) NOT NULL,
+  `service_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `category` varchar(35) NOT NULL,
   `service_code` char(4) NOT NULL,
-  `addon_id` int(4) DEFAULT NULL,
+  `addon_id` varchar(255) DEFAULT NULL,
   `timeblock` int(3) NOT NULL,
-  `role_id` int(4) NOT NULL,
+  `role_id` varchar(255) NOT NULL,
   `base_price` decimal(5,2) NOT NULL,
-  `schedule_id` int(4) DEFAULT NULL,
-  `status_code` int(4) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `schedule_id` varchar(255) DEFAULT NULL,
+  `status_code` varchar(255) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -1088,12 +1088,12 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `shift`;
 
 CREATE TABLE `shift` (
-  `shift_id` int(4) NOT NULL AUTO_INCREMENT,
+  `shift_id` varchar(255) NOT NULL,
   `start_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `end_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `staff_id` int(4) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `staff_id` varchar(255) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -1110,7 +1110,7 @@ CREATE TABLE `shift` (
 DROP TABLE IF EXISTS `staff`;
 
 CREATE TABLE `staff` (
-  `staff_id` int(4) NOT NULL,
+  `staff_id` varchar(255) NOT NULL,
   `first` varchar(35) NOT NULL,
   `last` varchar(35) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -1120,11 +1120,11 @@ CREATE TABLE `staff` (
   `postal` char(5) DEFAULT NULL,
   `phone` varchar(12) NOT NULL,
   `alt_phone` varchar(12) DEFAULT NULL,
-  `role_id` int(4) NOT NULL,
+  `role_id` varchar(255) NOT NULL,
   `services` varchar(255) DEFAULT NULL,
-  `status_code` int(4) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `status_code` varchar(255) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
@@ -1163,11 +1163,11 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `status`;
 
 CREATE TABLE `status` (
-  `status_code` int(4) NOT NULL AUTO_INCREMENT,
+  `status_code` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `class` char(10) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT NULL,
@@ -1200,12 +1200,12 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `vendor`;
 
 CREATE TABLE `vendor` (
-  `vendor_id` int(4) NOT NULL,
+  `vendor_id` varchar(255) NOT NULL,
   `name` varchar(35) NOT NULL,
   `details` varchar(255) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL,
-  `create_admin` int(4) NOT NULL DEFAULT '0',
-  `update_admin` int(4) DEFAULT NULL,
+  `create_admin` varchar(255) NOT NULL DEFAULT '0',
+  `update_admin` varchar(255) DEFAULT NULL,
   `create_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` tinyint(1) DEFAULT '1',
