@@ -2,10 +2,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/pong_matcher_spring_development
-    username: springpong
-    password: springpong
+    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_d7307ece1b28420
+    username: b5420fa5900b24
+    password: b55c193d
   jpa:
     hibernate.ddl-auto: none
     show_sql: false
-# TODO: Update Application YML file
