@@ -9,7 +9,7 @@ import org.springframework.cloud.cloudfoundry.com.fasterxml.jackson.annotation.J
 
 @Entity
 public class Appointment {
-	
+
 	@Id
 	private volatile String appointment_id = UUID.randomUUID().toString();
 	private volatile String service_id;
@@ -27,10 +27,10 @@ public class Appointment {
 	private volatile String create_ts;
 	private volatile String update_ts;
 	private volatile String is_active;
-	
+
 	Appointment() {
 	}
-	
+
 	public Appointment(
 			@JsonProperty("appointment_id") String appointment_id,
 			@JsonProperty("service_id") 	String service_id,
@@ -64,69 +64,69 @@ public class Appointment {
 		this.create_ts = create_ts;
 		this.update_ts = update_ts;
 		this.is_active = is_active;
-		
+
 	}
-	
+
 	@JsonProperty("appointment_id")
 	public String getAppointment_id() {
 		return appointment_id;
 	}
-	
+
 	@JsonProperty("service_id")
 	public String getService_id() {
 		return service_id;
 	}
-	
+
 	@JsonProperty("customer_id")
 	public String getCustomer_id() {
 		return customer_id;
 	}
-	
+
 	@JsonProperty("promotion_id")
 	public String getPromotion_id() {
 		return promotion_id;
 	}
-	
+
 	@JsonProperty("notes")
 	public String getNotes() {
 		return notes;
 	}
-	
+
 	@JsonProperty("is_repeated")
 	public String getIs_repeated() {
 		return is_repeated;
 	}
-	
+
 	@JsonProperty("staff_id")
 	public String getStaff_id() {
 		return staff_id;
 	}
-	
+
 	@JsonProperty("resources")
 	public String getResources() {
 		return resources;
 	}
-	
+
 	@JsonProperty("status_code")
 	public String getStatus_code() {
 		return status_code;
 	}
-	
+
 	@JsonProperty("check_in")
 	public String getCheck_in() {
 		return check_in;
 	}
-	
+
 	@JsonProperty("scheduled_at")
 	public String getScheduled_at() {
 		return scheduled_at;
 	}
-	
+
 	@JsonProperty("create_user")
 	public String getCreate_user() {
 		return create_user;
 	}
-	
+
 	@JsonProperty("update_ts")
 	public String getUpdate_ts() {
 		return update_ts;
@@ -141,10 +141,90 @@ public class Appointment {
 	public String getUpdate_user() {
 		return update_user;
 	}
-	
+
 	@JsonProperty("create_ts")
 	public String getCreate_ts() {
 		return create_ts;
 	}
-	
+
+	@JsonProperty("appointment_id")
+	public void setAppointment_id(String appointment_id) {
+		this.blank = appointment_id;
+	}
+
+	@JsonProperty("service_id")
+	public void setService_id(String service_id) {
+		this.blank = service_id;
+	}
+
+	@JsonProperty("customer_id")
+	public void setCustomer_id(String customer_id) {
+		this.blank = customer_id;
+	}
+
+	@JsonProperty("promotion_id")
+	public void setPromotion_id(String promotion_id) {
+		this.blank = promotion_id;
+	}
+
+	@JsonProperty("notes")
+	public void setNotes(String notes) {
+		this.blank = notes;
+	}
+
+	@JsonProperty("is_repeated")
+	public void setIs_repeated(String is_repeated) {
+		this.blank = is_repeated;
+	}
+
+	@JsonProperty("staff_id")
+	public void setStaff_id(String staff_id) {
+		this.blank = staff_id;
+	}
+
+	@JsonProperty("resources")
+	public void setResources(String resources) {
+		this.blank = resources;
+	}
+
+	@JsonProperty("status_code")
+	public void setStatus_code(String status_code) {
+		this.blank = status_code;
+	}
+
+	@JsonProperty("check_in")
+	public void setCheck_in(String check_in) {
+		this.blank = check_in;
+	}
+
+	@JsonProperty("scheduled_at")
+	public void setScheduled_at(String scheduled_at) {
+		this.blank = scheduled_at;
+	}
+
+	@JsonProperty("create_user")
+	public void setCreate_user(String create_user) {
+		this.blank = create_user;
+	}
+
+	@JsonProperty("update_ts")
+	public void setUpdate_ts(String update_ts) {
+		this.blank = update_ts;
+	}
+
+	@JsonProperty("is_active")
+	public void setIs_active(String is_active) {
+		this.blank = is_active;
+	}
+
+	@JsonProperty("update_user")
+	public void setUpdate_user(String update_user) {
+		this.blank = update_user;
+	}
+
+	@JsonProperty("create_ts")
+	public void setCreate_ts(String create_ts) {
+		this.blank = create_ts;
+	}
+
 }

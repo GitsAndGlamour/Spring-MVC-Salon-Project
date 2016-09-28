@@ -33,7 +33,7 @@ public final class Customer {
 
 	Customer() {
 	}
-	
+
 	public Customer(@JsonProperty("customer_id") String customer_id,
 			@JsonProperty("first") String first,
 			@JsonProperty("last") String last,
@@ -71,101 +71,196 @@ public final class Customer {
 		this.update_admin = update_admin;
 		this.create_ts = create_ts;
 		this.update_ts = update_ts;
-		
+
 	}
-	
-	@JsonProperty("customer_id") 
+
+	@JsonProperty("customer_id")
 	public String getCustomer_id() {
 		return customer_id;
 	}
 
-	@JsonProperty("first")  
+	@JsonProperty("first")
 	public String getFirst() {
 		return first;
 	}
 
-	@JsonProperty("last") 
+	@JsonProperty("last")
 	public String getLast() {
 		return last;
 	}
 
-	@JsonProperty("email") 
+	@JsonProperty("email")
 	public String getEmail() {
 		return email;
 	}
 
-	@JsonProperty("address") 
+	@JsonProperty("address")
 	public String getAddress() {
 		return address;
 	}
 
-	@JsonProperty("city") 
+	@JsonProperty("city")
 	public String getCity() {
 		return city;
 	}
 
-	@JsonProperty("state") 
+	@JsonProperty("state")
 	public String getState() {
 		return state;
 	}
 
-	@JsonProperty("postal") 
+	@JsonProperty("postal")
 	public String getPostal() {
 		return postal;
 	}
-	
-	@JsonProperty("phone") 
+
+	@JsonProperty("phone")
 	public String getPhone() {
 		return phone;
 	}
 
-	@JsonProperty("alt_phone") 
+	@JsonProperty("alt_phone")
 	public String getAlt_phone() {
 		return alt_phone;
 	}
 
-	@JsonProperty("notes") 
+	@JsonProperty("notes")
 	public String getNotes() {
 		return notes;
 	}
 
-	@JsonProperty("preferred_staff") 
+	@JsonProperty("preferred_staff")
 	public String getPreferred_staff() {
 		return preferred_staff;
 	}
 
-	@JsonProperty("discount_type") 
+	@JsonProperty("discount_type")
 	public String getDiscount_type() {
 		return discount_type;
 	}
 
-	@JsonProperty("referral_source") 
+	@JsonProperty("referral_source")
 	public String getReferral_source() {
 		return referral_source;
 	}
 
-	@JsonProperty("create_admin") 
+	@JsonProperty("create_admin")
 	public String getCreate_admin() {
 		return create_admin;
 	}
 
-	@JsonProperty("update_admin") 
+	@JsonProperty("update_admin")
 	public String getUpdate_admin() {
 		return update_admin;
 	}
 
-	@JsonProperty("create_ts") 
+	@JsonProperty("create_ts")
 	public String getCreate_ts() {
 		return create_ts;
 	}
 
-	@JsonProperty("update_ts") 
+	@JsonProperty("update_ts")
 	public String getUpdate_ts() {
 		return update_ts;
 	}
 
-	@JsonProperty("is_active") 
+	@JsonProperty("is_active")
 	public String getIs_active() {
 		return is_active;
+	}
+
+	@JsonProperty("customer_id")
+	public void setCustomer_id(String customer_id) {
+		this.customer_id = customer_id;
+	}
+
+	@JsonProperty("first")
+	public void setFirst(String first) {
+		this.first = first;
+	}
+
+	@JsonProperty("last")
+	public void setLast(String last) {
+		this.last = last;
+	}
+
+	@JsonProperty("email")
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@JsonProperty("address")
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@JsonProperty("city")
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	@JsonProperty("state")
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	@JsonProperty("postal")
+	public void setPostal(String postal) {
+		this.postal = postal;
+	}
+
+	@JsonProperty("phone")
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	@JsonProperty("alt_phone")
+	public void setAlt_phone(String alt_phone) {
+		this.alt_phone = alt_phone;
+	}
+
+	@JsonProperty("notes")
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	@JsonProperty("preferred_staff")
+	public void setPreferred_staff(String preferred_staff) {
+		this.preferred_staff = preferred_staff;
+	}
+
+	@JsonProperty("discount_type")
+	public void setDiscount_type(String discount_type) {
+		this.discount_type = discount_type;
+	}
+
+	@JsonProperty("referral_source")
+	public void setReferral_source(String referral_source) {
+		this.referral_source = referral_source;
+	}
+
+	@JsonProperty("create_admin")
+	public void setCreate_admin(String create_admin) {
+		this.create_admin = create_admin;
+	}
+
+	@JsonProperty("update_admin")
+	public void setUpdate_admin(String update_admin) {
+		this.update_admin = update_admin;
+	}
+
+	@JsonProperty("create_ts")
+	public void setCreate_ts(String create_ts) {
+		this.create_ts = create_ts;
+	}
+
+	@JsonProperty("update_ts")
+	public void setUpdate_ts(String update_ts) {
+		this.update_ts = update_ts;
+	}
+
+	@JsonProperty("is_active")
+	public void setIs_active(String is_active) {
+		this.is_active = is_active;
 	}
 }
