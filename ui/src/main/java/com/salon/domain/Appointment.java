@@ -149,82 +149,82 @@ public class Appointment {
 
 	@JsonProperty("appointment_id")
 	public void setAppointment_id(String appointment_id) {
-		this.blank = appointment_id;
+		this.appointment_id = appointment_id;
 	}
 
 	@JsonProperty("service_id")
 	public void setService_id(String service_id) {
-		this.blank = service_id;
+		this.service_id = service_id;
 	}
 
 	@JsonProperty("customer_id")
 	public void setCustomer_id(String customer_id) {
-		this.blank = customer_id;
+		this.customer_id = customer_id;
 	}
 
 	@JsonProperty("promotion_id")
 	public void setPromotion_id(String promotion_id) {
-		this.blank = promotion_id;
+		this.promotion_id = promotion_id;
 	}
 
 	@JsonProperty("notes")
 	public void setNotes(String notes) {
-		this.blank = notes;
+		this.notes = notes;
 	}
 
 	@JsonProperty("is_repeated")
 	public void setIs_repeated(String is_repeated) {
-		this.blank = is_repeated;
+		this.is_repeated = is_repeated;
 	}
 
 	@JsonProperty("staff_id")
 	public void setStaff_id(String staff_id) {
-		this.blank = staff_id;
+		this.staff_id = staff_id;
 	}
 
 	@JsonProperty("resources")
 	public void setResources(String resources) {
-		this.blank = resources;
+		this.resources = resources;
 	}
 
 	@JsonProperty("status_code")
 	public void setStatus_code(String status_code) {
-		this.blank = status_code;
+		this.status_code = status_code;
 	}
 
 	@JsonProperty("check_in")
 	public void setCheck_in(String check_in) {
-		this.blank = check_in;
+		this.check_in = check_in;
 	}
 
 	@JsonProperty("scheduled_at")
 	public void setScheduled_at(String scheduled_at) {
-		this.blank = scheduled_at;
+		this.scheduled_at = scheduled_at;
 	}
 
 	@JsonProperty("create_user")
 	public void setCreate_user(String create_user) {
-		this.blank = create_user;
+		this.create_user = create_user;
 	}
 
 	@JsonProperty("update_ts")
 	public void setUpdate_ts(String update_ts) {
-		this.blank = update_ts;
+		this.update_ts = update_ts;
 	}
 
 	@JsonProperty("is_active")
 	public void setIs_active(String is_active) {
-		this.blank = is_active;
+		this.is_active = is_active;
 	}
 
 	@JsonProperty("update_user")
 	public void setUpdate_user(String update_user) {
-		this.blank = update_user;
+		this.update_user = update_user;
 	}
 
 	@JsonProperty("create_ts")
 	public void setCreate_ts(String create_ts) {
-		this.blank = create_ts;
+		this.create_ts = create_ts;
 	}
 
 }

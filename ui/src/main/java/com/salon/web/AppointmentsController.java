@@ -47,7 +47,7 @@ public class AppointmentsController {
 	    ResponseEntity<List<Appointment>> findByStaffId(@PathVariable String staff_id) {
 	        List<Appointment> appointments = appointmentRepository.findByStaff_id(staff_id);
 
-	        if (appointments == null) {
+	        if (appointments.size() == 0) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        } else {
 	            return new ResponseEntity<>(appointments, HttpStatus.OK);
@@ -58,7 +58,7 @@ public class AppointmentsController {
 	    ResponseEntity<List<Appointment>> findByScheduledAt(@PathVariable String scheduled_at) {
 	        List<Appointment> appointments = appointmentRepository.findByScheduled_at(scheduled_at);
 
-	        if (appointments == null) {
+	        if (appointments.size() == 0) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        } else {
 	            return new ResponseEntity<>(appointments, HttpStatus.OK);
@@ -69,7 +69,7 @@ public class AppointmentsController {
 	    ResponseEntity<List<Appointment>> findByCustomerId(@PathVariable String customer_id) {
 	        List<Appointment> appointments = appointmentRepository.findByCustomer_id(customer_id);
 
-	        if (appointments == null) {
+	        if (appointments.size() == 0) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        } else {
 	            return new ResponseEntity<>(appointments, HttpStatus.OK);
@@ -77,13 +77,35 @@ public class AppointmentsController {
 	    }
 	 
 	 @RequestMapping(method = RequestMethod.GET, value = "/appointment/promotion/{promotion_id}")
-	    ResponseEntity<List<Appointment>> findByCustomerId(@PathVariable String customer_id) {
-	        List<Appointment> appointments = appointmentRepository.findByCustomer_id(customer_id);
+	    ResponseEntity<List<Appointment>> findByPromotionId(@PathVariable String promotion_id) {
+	        List<Appointment> appointments = appointmentRepository.findByPromotion_id(promotion_id);
 
-	        if (appointments == null) {
+	        if (appointments.size() == 0) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        } else {
 	            return new ResponseEntity<>(appointments, HttpStatus.OK);
 	        }
 	    }
+	 
+	 @RequestMapping(method = RequestMethod.GET, value = "/appointment/repeat/{is_repeated}")
+	  ResponseEntity<List<Appointment>> findByIsRepeated(@PathVariable String is_repeated) {
+		 List<Appointment> appointments = appointmentRepository.findByIs_repeated(is_repeated);
+		 
+		 if (appointments.size() == 0) {
+			 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		 } else {
+			 return new ResponseEntity<>(appointments, HttpStatus.OK);
+		 }
+	 }
+	 
+	 @RequestMapping(method = RequestMethod.GET, value = "/appointment")
+	  ResponseEntity<List<Appointment>> findAllAppointments() {
+		 List<Appointment> appointments = appointmentRepository.findAll();
+		 
+		 if (appointments.size() == 0) {
+			 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		 } else {
+			 return new ResponseEntity<>(appointments, HttpStatus.OK);
+		 }
+	 }
 }
